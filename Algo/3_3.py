@@ -5,4 +5,4 @@ for _ in range(10):
         a[s+i], a[e-i] = a[e-i], a[s+i]
 a.pop(0) 
 for x in a:
-    print(x, end = '  ') 
+    print(x, end = ' ') 
