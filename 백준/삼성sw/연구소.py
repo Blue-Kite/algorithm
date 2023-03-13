@@ -1,6 +1,6 @@
 #삼성sw문제1
 #풀이순서
-#벽을 세울 수 있는 3개 지점의 모든 조합 찾기
+#벽을 세울 수 있는 3개 지점의 모든 조합 찾기 => n과 m이 매우 작아서 모든 경우수가 64*63*62(1600만)
 #앞서 정한 지점에 벽을 세우고 바이러스 전파
 #가장 넓은 안전지대의 범위 출력
 
@@ -32,14 +32,14 @@ def bfs(board, empty):
         # 바이러스 위치
         virus = [(i, j) for i in range(n) for j in range(m) if board_new[i][j] == 2]
 
-        # 바이러스마다 전파 끝날 때까지 반복
+        # 바이러스마다 전파 => bfs 
         while virus:
             x_v, y_v = virus.pop()
             for k in range(4):
                 nx = x_v + dx[k]
                 ny = y_v + dy[k]
                 if 0 <= nx < n and 0 <= ny < m and board_new[nx][ny] == 0:
-                    board_new[nx][ny] = 2
+                    board_new[nx][ny] = 2 #visited 체크가 바로 가능함.
                     virus.append((nx, ny)) # 바이러스 전파
         
         #안전한 공간 크기 
