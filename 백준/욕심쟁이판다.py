@@ -2,22 +2,27 @@ n = int(input())
 nums = []
 for _ in range(n):
     nums.append(list(map(int, input().split())))
+dp = [0 for _ in range(n) for _ in range(n)]
 
 def recur(i, j):
-    direction=[[0, -1], [0, 1], [-1, 0], [1, 0]]
-    result = 0
+    
+    if dp[i][j] != 0:
+        return dp[i][j]
 
+    direction=[[0, -1], [0, 1], [-1, 0], [1, 0]]
+    
     for k in range(4):
-        dx = i + direction[i][0]
-        dy = j + direction[i][1]
+        dx = i + direction[k][0]
+        dy = j + direction[k][1]
 
         if 0 <= dx < n and 0 <= dy < n:
             if nums[i][j] < nums[dx][dy]:
-                return max(result, recur(dx, dy) + 1)
-    return 0
+                dp[i][j] =  max(dp[i][j], recur(dx, dy) + 1)
+    
+    return dp[i][j]
 
 for i in range(n):
     for j in range(n):
-        result = recur(i, j)
+        recur(i, j)
 
-print(result)
+print(max(map(max, dp)) + 1)
