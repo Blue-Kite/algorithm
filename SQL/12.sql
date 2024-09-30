@@ -1,3 +1,4 @@
+#빈값은 count할 때 null로 잡힘
 select  st.student_id, st.student_name, s.subject_name, COUNT(e.student_id) as attended_exams
 from Students st cross join Subjects s 
 left join Examinations e on st.student_id = e.student_id and s.subject_name = e.subject_name
