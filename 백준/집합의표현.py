@@ -1,3 +1,11 @@
+'''
+유니온 파인드 
+최상단 루트를 파악/ 하나의 집합인가?
+
+	최적화 
+find : 경로 단축 
+union : 
+'''
 import sys
 sys.setrecursionlimit(1000000) 
 input = sys.stdin.readline
