@@ -1,14 +1,10 @@
-def solution(people, limit):
-    answer = 0
-    people.sort()
-    a = 0
-    b = len(people) - 1
+def solution(numbers):
+    answer = ''
+    numbers = list(map(str, numbers))
+    numbers.sort(key = lambda x: x*3, reverse=True)
+    answer = ''.join(numbers)
 
-    while a < b:
-        if people[a] + people[b] <= limit:
-            a += 1
-            answer += 1
-
-        b -= 1
-
-    return len(people) - answer
+    #유일한 예외
+    if answer == '0' * len(numbers):
+        return '0'
+    return answer
