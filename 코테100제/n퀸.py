@@ -7,6 +7,7 @@ def dfs(n, cnt, col, diagonal1, diagonal2):
     if cnt == n:
         answer += 1
     else:
+        #각 행마다 
         #모든 열에 대해서 
         for i in range(n):
             if col[i] or diagonal1[i+cnt] or diagonal2[i-cnt+n]:

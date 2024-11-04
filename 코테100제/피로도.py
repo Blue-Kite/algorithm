@@ -1,5 +1,5 @@
 def dfs(k, cnt, visited, dungeons):
-    max_cnt = cnt
+    max_cnt = cnt #가능한 경우의 수중 최대값 
 
     for i in range(len(dungeons)):
         if k >= dungeons[i][0] and not visited[i]:
