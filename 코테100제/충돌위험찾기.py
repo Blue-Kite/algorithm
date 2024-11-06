@@ -36,7 +36,8 @@ def solution(points, routes):
                         path[i].append((start_x, start_y - 1)) 
                         start_y -= 1
                         total_y += 1
-
+                        
+                total_x, total_y = abs(end_x - start_x) , abs(end_y - start_y)
                 k = total_x + total_y
     print(path)
     max_path = max(list(map(len, path)))

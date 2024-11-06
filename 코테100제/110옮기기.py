@@ -21,6 +21,7 @@ def solution(s):
             else:
                 stack.append(word[i])    
         
+        #이 아래가 중요...
         w = ''.join(stack)
         idx = w.rfind('0')
         new_w = ''
