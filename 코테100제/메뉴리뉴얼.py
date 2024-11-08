@@ -8,7 +8,7 @@ def solution(orders, course):
         #n은 코드를 구성할 단품 메뉴 개수 
         food = []
         for o in orders:
-            comb = combinations(sorted(o), n) #combination라이브러리는 문자열 순서도 고려함
+            comb = combinations(sorted(o), n) #combination 라이브러리는 문자열 순서도 고려함
             food += comb
         
         foodlist = Counter(food)

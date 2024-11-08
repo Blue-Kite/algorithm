@@ -12,6 +12,7 @@ def union(par, rank, a, b):
     a_root = find(par, a)
     b_root = find(par, b)
 
+    #랭크가 큰거에 연결, 덜 깊어지도록 
     if rank[a] < rank[b]:
         par[a] = b_root
     elif rank[a] > rank[b]:
