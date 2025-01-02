@@ -1,7 +1,14 @@
 def find(parents, x):
+    if parents[x] == x:
+        return x
+    parents[x] = find(parents, x)
+    return parents[x]
 
 def union(parents, x, y):
-
+    root_x = find(parents, x)
+    root_y = find(parents, y)
+    parents[root_y] = root_x
+    
 def solution(k, operations):
   parents = list(range(k))  
   n = k  
@@ -14,5 +21,5 @@ def solution(k, operations):
 
   n = len(set(find(parents, i) for i in range(k)))
 
-  return n  
+  return n
   

@@ -8,6 +8,7 @@ def solution(genres, plays):
     n = len(plays)
 
     for i in range(n):
+        #딕셔너리 초기화 
         if genres[i] not in playlist:
             playlist[genres[i]] = 0
             songlist[genres[i]] = []

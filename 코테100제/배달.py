@@ -1,6 +1,7 @@
 import heapq
 INF = int(1e9)
 
+#다익스트라 
 def solution(N, road, K):
     graph = [[] for _ in range(N+1)]
     distance = [INF] * (N+1)
