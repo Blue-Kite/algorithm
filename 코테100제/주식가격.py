@@ -4,6 +4,7 @@ def solution(prices):
     stack.append(0) #첫 번째 인덱스로 초기화 
     
     for i in range(1, len(prices)):
+        #지금 가격보다 작은게 나올때가지 pop
         while stack and prices[stack[-1]] > prices[i]:
             j = stack.pop()
             answer[j] = i - j
