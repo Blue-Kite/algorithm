@@ -28,7 +28,6 @@ def solution(info, n, m):
                 if b + b_trace < m:
                     next_dp[a][b + b_trace] = True
 
-        #모든 아이템에 대해 A나 B 중 적어도 하나가 훔칠 수 없다면, 모든 dp[a][b]가 False가 반영
         for a in range(n):
             for b in range(m):
                 dp[a][b] = next_dp[a][b]

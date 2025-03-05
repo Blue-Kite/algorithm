@@ -4,7 +4,7 @@ from collections import deque
 def solution(maps):
     answer = 0
     n, m = len(maps), len(maps[0])
-    s_x, s_y, e_x, e_y = 0, 0, 0, 0
+    s_x, s_y, e_x, e_y = 0, 0, 0, 0 #시작점,끝점 좌표 저장
     for i in range(n):
         for j in range(m):
             if maps[i][j] == 'S':
